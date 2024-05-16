@@ -1,10 +1,13 @@
-# Magento 2 Contact Form Attachment Module
+# Magento 2.4.6 Contact Form Attachment Module
 
-This module extends the default Magento 2 contact form functionality by adding an attachment field, allowing users to upload files when submitting a contact request. This is particularly useful for businesses that require additional information or documentation from their customers.
+This module extends the default Magento 2.4.6 contact form functionality by adding an attachment field, allowing users to upload files when submitting a contact request. This is particularly useful for businesses that require additional information or documentation from their customers.
 
 ## Installation
 
-1. Clone or download this repository and place it in the `app/code/Debuglabs/ContactAttachment` directory of your Magento installation.
+1. Clone the repository to your Magento installation's `app/code/Debuglabs/ContactAttachment` directory:
+    ```bash
+    git clone https://github.com/splacento-incomm/Magento2-ContactAttachment.git app/code/Debuglabs/ContactAttachment
+    ```
 
 2. Enable the module by running the following commands:
     ```bash
