@@ -1,0 +1,27 @@
+<p style="font-size: 15px;">
+    <b>Attachment</b>
+    (Upload any relevant file e.g. screenshot of website error)
+</p>
+<p id="file_error" class="message-error error message" style="display:none;">
+    File is too large
+</p>
+<p class="file">
+    File must be less than 4MB and in any of these formats: .png, .jpg, .gif, .jpeg
+</p>
+<input id="attachment" accept=".png, .jpg, .gif, .jpeg/*" name="attachment" type="file" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('attachment')) ?>">
+
+<script type="text/javascript" xml="space">
+    require(['jquery'], function ($) {
+        jQuery(document).ready(function($){
+            var uploadField = document.getElementById("attachment");
+            uploadField.onchange = function() {
+                if(this.files[0].size > 44362048){
+                    $('#file_error').show();
+                    this.value = "";
+                }else{
+                    $('#file_error').hide();
+                };
+            };
+        });
+    });
+</script>
