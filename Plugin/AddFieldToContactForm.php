@@ -2,6 +2,8 @@
 namespace Debuglabs\ContactAttachment\Plugin;
 use Debuglabs\ContactAttachment\Block\Attachment as CommentBlock;
 use Magento\Contact\Block\ContactForm as Subject;
+use Magento\Framework\Exception\LocalizedException;
+use Magento\Framework\View\Element\BlockInterface;
 use Magento\Framework\View\Element\Template;
 
 
@@ -45,7 +47,8 @@ class AddFieldToContactForm
      * @param string $blockClass
      * @param Template $parentBlock
      *
-     * @return mixed
+     * @return BlockInterface
+     * @throws LocalizedException
      */
     private function getChildBlock(string $blockClass, Template $parentBlock)
     {
