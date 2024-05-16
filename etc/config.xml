@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/config.xsd">
+    <default>
+        <contactattachment>
+            <general>
+                <allowed_file_types>.png, .jpg, .gif, .jpeg</allowed_file_types>
+                <max_file_size>4</max_file_size>
+            </general>
+        </contactattachment>
+    </default>
+</config>

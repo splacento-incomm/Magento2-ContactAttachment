@@ -1,24 +1,31 @@
+<?php
+$config = \Magento\Framework\App\ObjectManager::getInstance()->get(\Debuglabs\ContactAttachment\Model\Config::class);
+$allowedFileTypes = $config->getAllowedFileTypes();
+$maxFileSize = $config->getMaxFileSize() * 1024 * 1024; // Convert MB to Bytes
+?>
+
 <p style="font-size: 15px;">
-    <b>Attachment</b>
-    (Upload any relevant file e.g. screenshot of website error)
+    <b><?= $block->escapeHtml(__('Attachment')) ?></b>
+    (<?= $block->escapeHtml(__('Upload any relevant file e.g. screenshot of website error')) ?>)
 </p>
 <p id="file_error" class="message-error error message" style="display:none;">
-    File is too large
+    <?= $block->escapeHtml(__('File is too large')) ?>
 </p>
 <p class="file">
-    File must be less than 4MB and in any of these formats: .png, .jpg, .gif, .jpeg
+    <?= $block->escapeHtml(__('File must be less than %1MB and in any of these formats: %2', $maxFileSize / 1024 / 1024, $allowedFileTypes)) ?>
 </p>
-<input id="attachment" accept=".png, .jpg, .gif, .jpeg/*" name="attachment" type="file" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('attachment')) ?>">
+<input id="attachment" accept="<?= $block->escapeHtmlAttr($allowedFileTypes) ?>" name="attachment" type="file" value="<?= $block->escapeHtmlAttr($this->helper('Magento\Contact\Helper\Data')->getPostValue('attachment')) ?>">
 
 <script type="text/javascript" xml="space">
     require(['jquery'], function ($) {
         jQuery(document).ready(function($){
             var uploadField = document.getElementById("attachment");
             uploadField.onchange = function() {
-                if(this.files[0].size > 44362048){
+                if(this.files[0].size > <?= $maxFileSize ?>){
                     $('#file_error').show();
+                    $('#file_error').text('<?= __('File is too large') ?>');
                     this.value = "";
-                }else{
+                } else {
                     $('#file_error').hide();
                 };
             };

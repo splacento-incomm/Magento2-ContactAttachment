@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="contactattachment" translate="label" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Contact Attachment</label>
+            <tab>general</tab>
+            <resource>Debuglabs_ContactAttachment::config</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="allowed_file_types" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allowed File Types</label>
+                    <comment>Comma-separated list of allowed file types (e.g., .png, .jpg, .gif, .jpeg)</comment>
+                </field>
+                <field id="max_file_size" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Maximum File Size (MB)</label>
+                    <comment>Maximum file size in MB</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
