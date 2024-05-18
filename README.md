@@ -17,16 +17,6 @@ This module extends the default Magento 2.4.6 contact form functionality by addi
     bin/magento cache:clean
     ```
 
-3. Copy the contact form template to your theme's directory:
-    ```bash
-    cp vendor/magento/module-contact/view/frontend/templates/form.phtml app/design/frontend/<VENDOR_NAME>/<YOUR_THEME>/Magento_Contact/templates/form.phtml
-    ```
-
-4. Open the copied `form.phtml` file and add the `enctype="multipart/form-data"` attribute to the form tag:
-    ```html
-    <form action="<?php /* form action here */ ?>" method="post" enctype="multipart/form-data">
-    ```
-
 ## Configuration
 
 1. **Allowed File Types and Maximum File Size:**
@@ -55,6 +45,12 @@ This module extends the default Magento 2.4.6 contact form functionality by addi
       </tr>
       ```
 
+3. **Editing Custom Fields:**
+    - If you need to add custom fields to the contact form, edit the form template located at:
+      ```
+      view/frontend/templates/form.phtml
+      ```
+
 ## Usage
 
 After following the installation and configuration steps, your Magento 2 contact form will include a file upload field, allowing users to attach files to their contact submissions.
@@ -66,3 +62,4 @@ This module was inspired by a solution provided by [Akash Malik](https://magento
 ## License
 
 This project is licensed under the MIT License.
+
